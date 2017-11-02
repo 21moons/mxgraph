@@ -1688,7 +1688,8 @@ var mxUtils =
 	 * in other words, one where only atomic (strings, numbers) values are
 	 * cloned. Default is false.
 	 */
-	 // shallow  是否浅拷贝
+	 // transients  忽略字段列表
+	 // shallow     是否浅拷贝
 	clone: function(obj, transients, shallow)
 	{
 		shallow = (shallow != null) ? shallow : false;
@@ -1700,6 +1701,7 @@ var mxUtils =
 			
 		    for (var i in obj)
 		    {
+		        // ObejctID 字段不拷贝, 忽略字段不拷贝
 		    	if (i != mxObjectIdentity.FIELD_NAME && (transients == null ||
 		    		mxUtils.indexOf(transients, i) < 0))
 		    	{

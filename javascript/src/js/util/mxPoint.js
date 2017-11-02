@@ -52,5 +52,6 @@ mxPoint.prototype.equals = function(obj)
 mxPoint.prototype.clone = function()
 {
 	// Handles subclasses as well
+	// 拷贝函数放到公共类
 	return mxUtils.clone(this);
 };

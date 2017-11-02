@@ -70,6 +70,9 @@
  * Constructs a new object to describe the size and location of a vertex or
  * the control points of an edge.
  */
+ 
+ // mxGeometry 从 mxRectangle 中派生, 在这里就不太清晰了
+ // cell 是一个逻辑概念, mxRectangle 是顶点 和 边的抽象
 function mxGeometry(x, y, width, height)
 {
 	mxRectangle.call(this, x, y, width, height);

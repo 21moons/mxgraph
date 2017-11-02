@@ -18,6 +18,8 @@ var mxObjectIdentity =
 	 * Name of the field to be used to store the object ID. Default is
 	 * <code>mxObjectId</code>.
 	 */
+	// 指定用来存储 ObejectID 的字段
+	// 从这里也可以感受到 javascript 最基本的结构是 map
 	FIELD_NAME: 'mxObjectId',
 
 	/**

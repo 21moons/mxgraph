@@ -15,6 +15,7 @@
  */
 
 // mxRectangle 的原型居然是 mxPoint
+// mxPoint 是四边形左上角的点, 其余的两个属性是宽和高
 function mxRectangle(x, y, width, height)
 {
 	mxPoint.call(this, x, y);
@@ -27,6 +28,7 @@ function mxRectangle(x, y, width, height)
  * Extends mxPoint.
  */
 mxRectangle.prototype = new mxPoint();
+// constructor 为什么要特别指明
 mxRectangle.prototype.constructor = mxRectangle;
 
 /**
@@ -81,6 +83,7 @@ mxRectangle.prototype.getCenterY = function ()
  *
  * Adds the given rectangle to this rectangle.
  */
+ // 四边形的合并方法
 mxRectangle.prototype.add = function(rect)
 {
 	if (rect != null)
@@ -102,6 +105,7 @@ mxRectangle.prototype.add = function(rect)
  * 
  * Changes this rectangle to where it overlaps with the given rectangle.
  */
+  // 两个四边形的交集
 mxRectangle.prototype.intersect = function(rect)
 {
 	if (rect != null)
@@ -126,6 +130,7 @@ mxRectangle.prototype.intersect = function(rect)
  * the given amount from the x- and y-coordinates and adds twice the amount
  * to the width and height.
  */
+ // 向四周线性扩展
 mxRectangle.prototype.grow = function(amount)
 {
 	this.x -= amount;
@@ -149,8 +154,10 @@ mxRectangle.prototype.getPoint = function()
  * 
  * Rotates this rectangle by 90 degree around its center point.
  */
+ // 长度和高度调换
 mxRectangle.prototype.rotate90 = function()
 {
+    // 获取四边体的几何中心
 	var t = (this.width - this.height) / 2;
 	this.x += t;
 	this.y -= t;
