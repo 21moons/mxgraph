@@ -12,6 +12,8 @@
  * Constructs a new point for the optional x and y coordinates. If no
  * coordinates are given, then the default values for <x> and <y> are used.
  */
+
+// mxPoint 只有两个属性, x 坐标和 y 坐标
 function mxPoint(x, y)
 {
 	this.x = (x != null) ? x : 0;

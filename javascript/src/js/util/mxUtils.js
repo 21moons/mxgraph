@@ -1688,6 +1688,7 @@ var mxUtils =
 	 * in other words, one where only atomic (strings, numbers) values are
 	 * cloned. Default is false.
 	 */
+	 // shallow  是否浅拷贝
 	clone: function(obj, transients, shallow)
 	{
 		shallow = (shallow != null) ? shallow : false;
@@ -1702,6 +1703,7 @@ var mxUtils =
 		    	if (i != mxObjectIdentity.FIELD_NAME && (transients == null ||
 		    		mxUtils.indexOf(transients, i) < 0))
 		    	{
+		    	    // 如果有嵌套的对象则递归调用
 			    	if (!shallow && typeof(obj[i]) == 'object')
 			    	{
 			            clone[i] = mxUtils.clone(obj[i]);

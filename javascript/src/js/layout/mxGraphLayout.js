@@ -23,6 +23,8 @@
  * 
  * graph - Enclosing 
  */
+
+// mxGraph 中所有布局算法的基类
 function mxGraphLayout(graph)
 {
 	this.graph = graph;
@@ -33,6 +35,7 @@ function mxGraphLayout(graph)
  * 
  * Reference to the enclosing <mxGraph>.
  */
+ // 包含所有的 数据
 mxGraphLayout.prototype.graph = null;
 
 /**

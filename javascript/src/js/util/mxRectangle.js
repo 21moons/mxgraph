@@ -13,6 +13,8 @@
  * Constructs a new rectangle for the optional parameters. If no parameters
  * are given then the respective default values are used.
  */
+
+// mxRectangle 的原型居然是 mxPoint
 function mxRectangle(x, y, width, height)
 {
 	mxPoint.call(this, x, y);
